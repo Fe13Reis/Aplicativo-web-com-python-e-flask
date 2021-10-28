@@ -1,11 +1,41 @@
-{% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul id="messages" class="list-unstyled">
-                {% for message in messages %}
-                    <li class="alert alert-success">{{ message }}</li>
-                {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
+<!DOCTYPE html>
 
-<h1>SOMENTE USUÁRIOS AUTENTICADOS</h1>
+<head>
+    <title>Agendamentos - Condomínio Residencial Solar de Oliveira</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/stileAgenda.css">
+
+</head>
+
+{% with messages = get_flashed_messages() %}
+<!--Usuário logado-->
+{% if messages %}
+<ul id="messages" class="list-unstyled">
+    {% for message in messages %}
+    <!--<li class="alert alert-success">{{ message }}</li>-->
+    {% endfor %}
+</ul>
+
+<body>
+    <h1>Reservas</h1>
+    <h2>Selecione um ambiente</h2>
+
+</body>
+
+<!--tentativa de acesso sem estar logado-->
+{% else %}
+
+<body>
+    <h1>SOMENTE USUÁRIOS AUTENTICADOS PODEM ACESSAR ESSA PÁGINA</h1>
+    <br>
+    <h1>CLIQUE NO BOTÃO PARA IR PARA O LOGIN</h1>
+
+    <a class="pure-button" href="/login">Login</a>
+ 
+</body>
+
+{% endif %}
+{% endwith %}
