@@ -1,8 +1,26 @@
 from flask import Flask, render_template, redirect, request, session, flash, \
 url_for
+
+
+import pyrebase
+
+firebaseConfig = {
+  'apiKey': "AIzaSyAtmOiQQWMkSWMrpx5oafa5crw8yD7BaBk",
+  'authDomain': "pji110-sa-g002.firebaseapp.com",
+  'projectId': "pji110-sa-g002",
+  'storageBucket': "pji110-sa-g002.appspot.com",
+  'messagingSenderId': "758005852528",
+  'appId': "1:758005852528:web:f491f93e6bec2ddf3f87b5",
+  'measurementId': "G-J41KXNEZFL",
+  'databaseURL': "https://pji110-sa-g002-default-rtdb.firebaseio.com/"
+}
+
+firebase = pyrebase.initialize_app(firebaseConfig)
+auth = firebase.auth()
+
 app = Flask(__name__)
 app.secret_key = 'alura'
-
+'''
 class Usuario:
     def __init__(self, id, nome, senha):
         self.id = id
@@ -17,7 +35,7 @@ usuario3 = Usuario('thiago@gmail.com', 'Tiago', '9101')
 usuarios = {usuario1.id: usuario1,
             usuario2.id: usuario2,
             usuario3.id: usuario3}
-
+'''
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -35,6 +53,8 @@ def login():
 
 @app.route('/autenticar', methods=['POST', ])
 def autenticar():
+
+    '''
     if request.form['e-mail'] in usuarios:
         usuario = usuarios[request.form['e-mail']]
         if usuario.senha == request.form['senha']:
@@ -45,12 +65,26 @@ def autenticar():
         else:
           flash('Não logado, tente novamente')
           return redirect(url_for('login'))
-
+    '''
+    if request.method == 'POST':
+        email = request.form.get('e-mail')
+        senha = request.form.get('senha')
+        try:
+            auth.sign_in_with_email_and_password(email, senha)
+            flash(email + ' logou com sucesso!')
+            #proxima_pagina = request.form['proxima']
+            return redirect(url_for('agenda'))
+        except:
+          flash('Não logado, tente novamente')
+          return redirect(url_for('login'))
 @app.route('/logout')
 def logout():
     session['usuario_logado'] = None
     flash('Nenhum usuário logado!')
     return redirect(url_for('index'))
 
-app.run(debug=True)
+@app.route('/cadastro')
+def cadastro():
+    return render_template('cadastro.html')
 
+app.run(debug=True)
