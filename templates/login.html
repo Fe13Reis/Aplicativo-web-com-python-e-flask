@@ -1,77 +1,187 @@
-  <title>Agendamentos - Condomínio Residencial Solar de Oliveira</title>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/sign-in/">
+      <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-
-    <!-- Bootstrap core CSS -->
-<link href="../static/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 
-    <!-- Custom styles for this template -->
-    <link href="../static/signin.css" rel="stylesheet">
-  </head>
+    <!-- Estilo customizado -->
+    <link rel="stylesheet" type="text/css" href="..css//estilo.css">
 
-  <header>
-			<h1 class="titulo-principal">Condomínio Residencial Solar de Oliveira</h1>
+</head>
+<body>
+    <header>
+      <nav class="navbar navbar-expand-md fixed-top navbar-transparente" style="background-color: black;">
+           <div class="container" style="color: yellow;">
+                <table>
+                    <tr>
+                        <td>
+                            <h6 style="text-align: center;">SGCS - Sistema de gerenciamento do Condominio Solar</h6>
+                        </td>
+                        <td>
+                            <button style="margin-left: 20px; text-align: right;" id="btnAdmin" class="btn-warning">Administrador</button>
+                        </td>
+                    </tr>
+                </table>
+                
+            </div>  
+      </nav>
+    </header>
+    <section class="caixa"  style="margin-top: 80px; margin-bottom: 20px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row albuns">
+                      <div id="carousel-legenda" class="carousel slide ml-4" data-ride="carousel"><!--Carousel -->
 
-		</header>
+                          <!-- Indicadores -->
+                          <ol class="carousel-indicators">
 
-  <body class="text-center">
+                            <li class="active" data-target="#carousel-legenda" data-slide-to="0"></li>
+                            <li data-target="#carousel-legenda" data-slide-to="1"></li>
+                            <li data-target="#carousel-legenda" data-slide-to="2"></li>
+                            <li data-target="#carousel-legenda" data-slide-to="3"></li>
+                            <li data-target="#carousel-legenda" data-slide-to="4"></li>
 
-<main class="form-signin">
+                          </ol>
 
-  <form method="POST" action="{{ url_for('autenticar') }}">
-    <img class="mb-4" src="../static/img/predio.jpg" width="300" height="200">
+                          <div class="carousel-inner"><!--Inner -->
+                            
+                            <div class="carousel-item active ml-3">
+                              <img src="https://casaantigaimoveis.com.br/wp-content/uploads/2019/05/condominio-806x467.jpg" class="img-fluid">
+                              <div class="carousel-caption bg-info">VISTA 1</div>
+                            </div>
 
-      {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul id="messages" class="list-unstyled">
-                {% for message in messages %}
-                    <li class="alert alert-success">{{ message }}</li>
-                {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
+                            <div class="carousel-item ml-3">
+                              <img src="https://img.migalhas.com.br/gf_base/empresas/MIGA/imagens/0DFB4DBB9CF55DF99807CBEE8AC9DB0FA184_lazer.jpg" class="img-fluid">
+                              <div class="carousel-caption bg-info">VISTA 2</div>
+                            </div>
 
-    <h1 class="h3 mb-3 fw-normal">Acesse para agendar</h1>
+                            <div class="carousel-item ml-3">
+                              <img src="https://thumbs.jusbr.com/imgs.jusbrasil.com/publications/noticias/images/fachada-regalle-club-e-condominio1478166795.jpg" class="img-fluid">
+                              <div class="carousel-caption bg-info">VISTA 3</div>
+                            </div>
 
-    <div class="form-floating mb-3">
-      <input type="hidden" name="proxima" value="{{ proxima or url_for('index') }}">
-      <input type="email" class="form-control" name="e-mail" placeholder="name@example.com">
-      <label for="floatingInput">E-mail</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" name="senha" placeholder="Password">
-      <label for="floatingPassword">Senha</label>
-    </div>
+                            <div class="carousel-item ml-3">
+                              <img src="https://www.minutoseguros.com.br/blog/wp-content/uploads/2020/08/1200x628_blog_seguro_2-1.png" class="img-fluid">
+                              <div class="carousel-caption bg-info">VISTA 4</div>
+                            </div>
 
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
-    <p class="mt-5 mb-3 text-muted">&copy;2021</p>
-  </form>
-</main>
+                            <div class="carousel-item ml-3">
+                              <img src="https://www.construtoramtf.com.br/blog/wp-content/uploads/2021/04/5-vantagens-e-beneficios-de-morar-em-condominio-fechado.jpg" class="img-fluid">
+                              <div class="carousel-caption bg-info">VISTA 5</div>
+                            </div>
+                            
+                          </div><!--/Inner -->
 
+                          <!-- Controles -->
+                          <a href="#carousel-legenda" class="carousel-control-prev" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                          </a>
 
+                          <a href="#carousel-legenda" class="carousel-control-next" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                          </a>
 
- </body>
+                      </div><!--/Carousel -->
+                    </div>
+                </div>
+                <div class="col-md-6"> 
+                    <form method="POST" action="{{ url_for('autenticar') }}">
+                        <!--
+                          {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    <ul id="messages" class="list-unstyled">
+                                    {% for message in messages %}
+                                        <li class="alert alert-success">{{ message }}</li>
+                                    {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            {% endwith %}
+                        -->
+                        <h1 class="h3 mb-3 fw-normal">Acesse para agendar</h1>
+
+                        <div class="form-floating mb-3">
+                          <input type="hidden" name="proxima" value="{{ proxima or url_for('index') }}">
+                          <label for="floatingInput">E-mail</label>
+                          <input type="email" class="form-control" name="e-mail" placeholder="name@example.com">
+                          
+                        </div>
+                        <div class="form-floating">
+                          <label for="floatingPassword">Senha</label>
+                          <input type="password" class="form-control" name="senha" placeholder="Password"><br>
+                        </div>
+
+                        <div class="checkbox mb-3">
+                          <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                          </label>
+                          <label style="margin-left: 100px">
+                            <a href=""><u>Esqueci a minha senha!</u></a>
+                          </label>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h3>
+                Sobre nós
+            </h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus, est ut porta bibendum, lorem dolor fermentum ligula, quis dignissim magna turpis eu magna. Pellentesque at scelerisque mi. Quisque semper, orci eget cursus gravida, augue erat pellentesque magna, et facilisis urna eros ac nunc. Nulla lobortis mi sit amet euismod consectetur. Nullam vitae quam metus. Nunc in scelerisque turpis, nec feugiat odio. Praesent interdum eleifend vulputate. Sed accumsan lobortis rutrum. In nec convallis nibh, eu maximus lectus. Nam euismod ante justo, ut ullamcorper libero rhoncus quis.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus, est ut porta bibendum, lorem dolor fermentum ligula, quis dignissim magna turpis eu magna. Pellentesque at scelerisque mi. Quisque semper, orci eget cursus gravida, augue erat pellentesque magna, et facilisis urna eros ac nunc. Nulla lobortis mi sit amet euismod consectetur. Nullam vitae quam metus. Nunc in scelerisque turpis, nec feugiat odio. Praesent interdum eleifend vulputate. Sed accumsan lobortis rutrum. In nec convallis nibh, eu maximus lectus. Nam euismod ante justo, ut ullamcorper libero rhoncus quis.
+            </p>
+        </div>
+    </section>
+    <footer style="background-color: black;">
+        <table style="width:100%">
+
+          <tr>
+            <td style="width:10%">
+              <center>
+                  <p class="mt-5 mb-3 text-muted">Segue a gente nas redes sociais</p>
+              </center>
+            </td>
+            <td style="width:10%">
+              <center>
+                  <a href="https://www.facebook.com/">
+                    <img src="https://www.jerem.com.br/imagens/facebook.png" style="height: 50px; width: 50px">
+                  </a>
+              </center>
+            </td>
+            <td style="width:10%">
+              <center>
+                  <a href="https://www.instagram.com/">
+                    <img src="https://www.jerem.com.br/imagens/instagram.png" style="height: 50px; width: 50px">
+                  </a>
+              </center>
+            </td>
+            <td style="width:10%">
+              <center>
+                  <p class="mt-5 mb-3 text-muted">&copy;2021</p>
+              </center>
+            </td>
+          </tr>
+        </table>      
+      <a href="https://api.whatsapp.com/send?l=pt&amp;phone=5511977205935"><img src="https://www.jerem.com.br/imagens/whatsapp.png" style="height:60px; width: 60px; position:fixed; bottom: 125px; right: 25px; z-index:99999;" data-selector="img"></a>
+    </footer>
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+</body>
 </html>
