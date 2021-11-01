@@ -38,6 +38,10 @@ header {
 	font-weight: bold;
 }
 
+.produtos img {
+	width: 40%;
+}
+
 .produto-descricao {
 	font-size: 18px;
 }
