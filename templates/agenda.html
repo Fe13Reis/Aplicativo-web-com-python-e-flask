@@ -1,27 +1,59 @@
 <!DOCTYPE html>
 
 <head>
+	<meta charset="UTF-8">
     <title>Agendamentos - Condomínio Residencial Solar de Oliveira</title>
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
         integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
-        <link rel="stylesheet" href="../static/stileAgenda.css">
+    <link rel="stylesheet" href="../static/stileAgenda.css">
 
 </head>
 
-{% with messages = get_flashed_messages() %}
-<!--Usuário logado-->
-{% if messages %}
-<ul id="messages" class="list-unstyled">
-    {% for message in messages %}
-    <li class="alert alert-success">{{ message }}</li>
-    {% endfor %}
-</ul>
+
 
 <body>
-    <h1>Reservas</h1>
-    <h2>Selecione um ambiente</h2>
+
+	<header>
+    	<h1>Reservas</h1>
+    	<h2>Selecione um ambiente</h2
+	</header>
+
+	
+	
+	 <main>
+		{% with messages = get_flashed_messages() %}
+		<!--Usuário logado-->
+		{% if messages %}
+		<ul id="messages" class="list-unstyled">
+			{% for message in messages %}
+			<li class="alert alert-success">{{ message }}</li>
+			{% endfor %}
+		</ul>
+	
+		<!--Tentando fazer das imagens o próprio botão/link-->
+		<ul class="produtos">
+			<li>
+				<h2>Piscina coberta</h2>
+				<img clas="imagem" src="../static/img/piscina_coberta.jpg">
+				<p class="produto-descrica">Piscina coberta climatizada, disponível de terça a domingo das 09:00 às 22:00.</p>
+				<p class="produto-preco">Limite diário de 60 minutos por apartamento.</p>	
+			</li>
+			<li>
+				<h2>Salão de Festas</h2>
+				<img clas="imagem" src="../static/img/salao_de_festas.png"
+				<p class="produto-descricao">Salão de festas com toda a infraestrutura para sua confraternização.</p>
+				<p class="produto-preco">R$180,00 por reserva.</p>
+			</li>
+			<li>
+				<h2>Churrasqueira</h2>
+				<img clas="imagem" src="../static/img/churrasqueira.jpg">
+				<p class="produto-descricao">Espaço com churrasqueira para até 30 pessoas.</p>
+				<p class="produto-preco">R$100,00 por resrva.</p>
+			</li>
+		</ul>
+	</main>
 
 </body>
 
