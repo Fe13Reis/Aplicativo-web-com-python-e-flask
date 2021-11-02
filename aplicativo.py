@@ -25,6 +25,18 @@ app.secret_key = 'alura'
 def index():
     return render_template('index.html')
 
+@app.route('/churras')
+def churras():
+    return render_template('agenda-churras.html')
+
+@app.route('/piscina')
+def piscina():
+    return render_template('agenda-piscina.html')
+
+@app.route('/salao')
+def salao():
+    return render_template('agenda-salao.html')
+
 @app.route('/agenda')
 def agenda():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:

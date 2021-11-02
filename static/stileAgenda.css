@@ -4,7 +4,7 @@ header {
 }
 
 .produtos {
-	width: 940px;
+	width: 940 px;
 	margin: 0 auto;
 	padding: 50px 0;
 }
@@ -19,10 +19,12 @@ header {
 	box-sizing: border-box;
 	border: 2px solid #000000;
 	border-radius: 10px;
+	height: 400px;
 }
 
 .produtos li:hover {
 	border-color: #C78C19;
+	background-color: aqua;
 }
 
 .produtos li:active {
