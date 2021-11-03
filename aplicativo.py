@@ -17,9 +17,31 @@ firebaseConfig = {
 
 firebase = pyrebase.initialize_app(firebaseConfig)
 auth = firebase.auth()
+db = firebase.database();
 
 app = Flask(__name__)
 app.secret_key = 'alura'
+
+events = [
+    {
+        'todo' : 'Casa Cintia - Churrasco', 
+        'date' : '2021-11-02',
+    },
+    {
+        'todo' : 'Casa Eric - Cerveja', 
+        'date' : '2021-11-10',
+    },
+    {
+        'todo' : 'Casa Bruno - Piscina', 
+        'date' : '2021-11-15',
+    },
+    {
+        'todo' : 'Dia de Piscina', 
+        'date' : '2021-11-20',
+    }
+]
+
+#events = db.child('events').get()
 
 @app.route('/')
 def index():
@@ -27,7 +49,7 @@ def index():
 
 @app.route('/churras')
 def churras():
-    return render_template('agenda-churras.html')
+    return render_template('agenda-churras.html', events = events)
 
 @app.route('/piscina')
 def piscina():
@@ -87,4 +109,20 @@ def logout():
 def cadastro():
     return render_template('cadastro.html')
 
+#data={'name' : 'Teste', 'numero':123, 'lgpd': True}
+#db.push(data)
+@app.route('/agendar-espaco', methods=['POST', 'GET'])
+def agendarEspaco():
+    if request.method == 'POST':
+        data = request.form.get('data')
+        espaco = request.form.get('espaco')
+        dataEvent={'date' : data, 'todo': espaco}
+        try:
+            db.child('events').push(dataEvent)
+            flash('Agendado com sucesso')
+            return redirect(url_for('churras'))
+        except:
+          flash('Falha no Agendamento, tente novamente!')
+          return redirect(url_for('churras'))
+#print(db.child('events').get())
 app.run(debug=True)
