@@ -1,12 +1,15 @@
 header {
 	background: #BBBBBB;
-	padding: 20px 0;
+	/*padding: 20px 0;*/
 }
 
 .produtos {
 	width: 940 px;
 	margin: 0 auto;
-	padding: 50px 0;
+	padding-left: 50px 0;
+	padding-right: 50px 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .produtos li {
@@ -15,7 +18,7 @@ header {
 	width: 30%;
 	vertical-align: top;
 	margin: 0 1.5%;
-	padding: 30px 20px;
+	padding: 10px 10px;
 	box-sizing: border-box;
 	border: 2px solid #000000;
 	border-radius: 10px;
@@ -30,7 +33,7 @@ header {
 .produtos li:active {
 	border-color: #088C19;	
 }
-
+/*
 .produtos li:hover h2 {
 	font-size: 34px;
 }
@@ -38,10 +41,6 @@ header {
 .produtos h2 {
 	font-size: 30px;
 	font-weight: bold;
-}
-
-.produtos img {
-	width: 40%;
 }
 
 .produto-descricao {
@@ -53,7 +52,11 @@ header {
 	font-weight: bold;
 	margin-top: 10px;
 }
-
+*/
+.produtos img {
+	width: 70%;
+	height: 50%;
+}
 
 main {
 	width: 940px;

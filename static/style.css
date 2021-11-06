@@ -3,6 +3,13 @@ body {
 	background-attachment: fixed;
 	font-family: Helvetica,Arial,sans-serif;
 }
+
+h1 {
+    border: 2px #eee solid;
+    color: brown;
+    text-align: center;
+    padding: 10px;
+}
 img {
 	display: block;
 	margin-left: auto;
@@ -11,7 +18,7 @@ img {
   }
 .center {
     position: absolute;
-    top: 50%;
+    top: 20%;
     width: 100%;
     text-align: center;
     font-size: 18px;
@@ -28,13 +35,15 @@ img {
     padding: 10px 20px;
 }
 
-.btn-roxo {
-	background: #7c25f8;
+.btn-verde {
+	background: #035003;
+	color: white;
+	border: 2px solid white;
 }
 
-.btn-roxo:hover {
-	background: #6207e3;
-	color: white;
+.btn-verde:hover {
+	background: #ffffff;
+	color: rgb(0, 0, 0);
 }
 
 .btn-branco {
