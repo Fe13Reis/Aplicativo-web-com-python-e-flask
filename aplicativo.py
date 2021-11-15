@@ -184,5 +184,5 @@ def delete(id):
 @app.route('/info')
 def info():
     return render_template('info.html')
-
+#I-PJI110-0027modpas@1
 app.run(debug=True)
