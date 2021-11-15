@@ -15,6 +15,9 @@
     <link rel="stylesheet" type="text/css" href="../static/style.css">
     <title>Inicio</title>
 </head>
+<header>
+    <h1 style="color: white; margin-bottom: 10px; margin-top: 20px; ">Bem vindo ao Sistema de Gerenciamento</h1>
+</header>
 <body>
     {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -28,9 +31,9 @@
 
     <div class="center">
     
-        <h1 style="color: white; margin-bottom: 25px;">Bem vindo no Portal SGCS</h1>
+        <h2 style="color:  white;  margin-bottom: 20px;">Condomínio Residencial Solar de Oliveira</h2>
 
-        <img src="../static/img/predio.jpg" class="img" style="margin-bottom: 25px;">
+        <img src="../static/img/predio.jpg" class="img" style="margin-bottom: 50px;">
 
         <a href="/login" class="btn btn-lg btn-custom btn-verde"> Conectar </a>
 

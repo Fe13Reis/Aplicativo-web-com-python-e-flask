@@ -63,7 +63,7 @@ def autenticar():
             proxima_pagina = request.form['proxima']
             return redirect(url_for('agenda'))
         except:
-          flash('Email e/ou senha, tente novamente')
+          flash('Email e/ou senha inválidos, tente novamente')
           return redirect(url_for('login'))
 
 @app.route('/cadastrar', methods=['POST', 'GET'])
@@ -184,5 +184,17 @@ def delete(id):
 @app.route('/info')
 def info():
     return render_template('info.html')
+
+
+@app.route('/visitantes')
+def visitantes():
+    conn = get_db_connection()
+    events = conn.execute('SELECT * FROM posts').fetchall()
+    conn.close()
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect(url_for('login', proxima=url_for('login')))
+    #return render_template('agenda.html', email = session['usuario_logado'], events = events)
+    return render_template('visitantes.html')
+
 
 app.run(debug=True)
