@@ -23,41 +23,67 @@
     <header>
         <nav class="navbar navbar-expand-md fixed-top navbar-transparente" style="background-color: black;">
             <div class="container" style="color: yellow;">
-                <table>
-                    <tr>
-                        <td>
-                            <h6 style="text-align: center;">SGC - Sistema de Gerenciamento do Condomínio Solar de
-                                Oliveira</h6>
-                        </td>
-                    </tr>
-                </table>
+                <h6 style="text-align: center;">SGC - Sistema de Gerenciamento do Condomínio Solar de
+                    Oliveira</h6>
             </div>
         </nav>
     </header>
 
     <br>
+
     <h1 style="color: white; margin-bottom: 10px; margin-top: 20px; ">Bem vindo ao Sistema de Gerenciamento</h1>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul id="messages" class="list-unstyled">
-        {% for message in messages %}
-        <li class="alert alert-success">{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    {% endwith %}
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul id="messages" class="list-unstyled">
+            {% for message in messages %}
+            <li class="alert alert-success">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
 
     <div class="center">
 
         <h2 style="color:  white;  margin-bottom: 20px;">Condomínio Residencial Solar de Oliveira</h2>
 
-        <img src="../static/img/predio.jpg" class="img" style="margin-bottom: 50px;">
+        <img src="../static/img/predio.jpg" class="img">
 
         <a href="/login" class="btn btn-lg btn-custom btn-verde"> entrar </a>
 
         <a href="/cadastro" class="btn btn-lg btn-custom btn-branco">cadastrar</a>
 
     </div>
+
+    <footer style="background-color: black;">
+        <table style="width:100%">
+
+            <tr>
+                <td style="width:10%; text-align: center;">
+                    <p class="mt-5 mb-3" style="color: white;">Segue a gente nas redes sociais</p>
+                </td>
+                <td style="width:10%;; text-align: center;">
+                    <a href="https://www.facebook.com/">
+                        <img src="https://www.jerem.com.br/imagens/facebook.png" style="height: 50px; width: 50px">
+                    </a>
+                </td>
+                <td style="width:10%; text-align: center;">
+                    <a href="https://www.instagram.com/">
+                        <img src="https://www.jerem.com.br/imagens/instagram.png" style="height: 50px; width: 50px">
+                    </a>
+                </td>
+                <td style="width:10%; text-align: center;">
+                    <a href="#">Administrador</a>
+                </td>
+                <td style="width:10%; text-align: center;">
+                    <p style="color: white;">&copy;2021</p>
+                </td>
+            </tr>
+        </table>
+        <a href="https://api.whatsapp.com/send?l=pt&amp;phone=5511977205935"><img
+                src="https://www.jerem.com.br/imagens/whatsapp.png"
+                style="height:60px; width: 60px; position:fixed; bottom: 125px; right: 25px; z-index:99999;"
+                data-selector="img"></a>
+    </footer>
 </body>
 
 </html>
