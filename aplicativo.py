@@ -24,7 +24,7 @@ firebaseConfig = {
 
 firebase = pyrebase.initialize_app(firebaseConfig)
 auth = firebase.auth()
-db = firebase.database();
+db = firebase.database()
 
 app = Flask(__name__)
 app.secret_key = 'alura'
@@ -184,5 +184,50 @@ def delete(id):
 @app.route('/info')
 def info():
     return render_template('info.html')
+
+@app.route('/visitantes')
+def visitantes():
+    return render_template('visitantes.html')
 #I-PJI110-0027modpas@1
+
+#Gravar um visitante
+@app.route('/lista-visitante', methods=('GET', 'POST'))
+def listaVisitante():
+    if request.method == 'POST':
+        data = request.form['data']
+        nome = request.form['nome']
+        doc = request.form['rg']
+        morador = session['usuario_logado']
+        #content = (nome + ": " + doc)
+
+        dataEvent={'date' : data, 'nome': nome, 'doc': doc, 'morador': morador}
+
+        try:
+            db.child('visitantes').push(dataEvent)
+            flash('sucesso!')
+            return redirect(url_for('visitantes'))
+        except:
+          flash('Falha, tente novamente!')
+          return redirect(url_for('visitantes'))
+
+#Gravar um recados
+@app.route('/lista-recados', methods=('GET', 'POST'))
+def listaRecardos():
+    if request.method == 'POST':
+        data = request.form['data']
+        mensagem = request.form['nome']
+        asunto = request.form['rg']
+        morador = session['usuario_logado']
+        #content = (nome + ": " + doc)
+
+        dataEvent={'date' : data, 'mensagem': mensagem, 'asunto': asunto, 'morador': morador}
+
+        try:
+            db.child('recados').push(dataEvent)
+            flash('sucesso!')
+            return redirect(url_for('info'))
+        except:
+          flash('Falha, tente novamente!')
+          return redirect(url_for('info'))
+
 app.run(debug=True)
