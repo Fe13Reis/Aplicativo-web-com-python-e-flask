@@ -39,82 +39,68 @@
   </header>
 
   <section class="caixa" style="margin-top: 80px; margin-bottom: 20px">
-    <h1 style="text-align: center; color: black;"> Lista de visitantes</h1><br>
+    <div class="container">
+      <h1 style="text-align: center; color: black;"> Lista de visitantes</h1><br>
 
-    <form>
-      <div class="form-floating">
-        <label style="margin-top: 10px; text-align: center;  font-size: 26px; color: black;" for="floatingNome">Inclua o
-          nome dos visitantes</label>
-        <input style="width: 800px;margin-top: 20px;" type="text" class="form-control" name="nome"
-          placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
-      <div class="form-floating">
-        <input style="width: 800px;" type="text" class="form-control" name="nome" placeholder="Nome Completo"><br>
-      </div>
+      <form method="POST" action="{{ url_for('listaVisitante') }}">
+        <div class="form-floating">
+          <label style="margin-top: 10px; text-align: center;  font-size: 26px; color: black;" for="floatingNome">
+            Inclua o nome dos visitantes</label>
+          <input style="width: 100%;margin-top: 20px;" type="text" class="form-control" name="nome"
+            placeholder="Nome Completo"><br>
+            <table style="width: 100%">
+              <tr style="vertical-align: middle;">
+                <td style="vertical-align: middle;">
+                  <input style="margin-top: 20px;" type="text" class="form-control" name="rg"
+                  placeholder="Documento do Visitante">
+                </td>
+                <td style="vertical-align: middle;">
+                  <input style="margin-top: 20px;" type="date" class="form-control" name="data"><br>
+                </td>
+              </tr>
+            </table>
+        </div>
 
-      </td>
-      <td style="padding-right: 10px;">
-        <button class="btn-lg btn-primary" type="submit">Enviar</button>
-      </td>
-      </div>
+        </td>
+        <td style="padding-right: 10px;">
+          <button class="btn-lg btn-primary" type="submit">Enviar</button>
+        </td>
+    </div>
     </form>
+    </div>
+    
+    <div class="container" style="background-color: white; margin-top: 25px;">
+      <table style="width: 100%;" class="table">
+        <thead class="thead-dark">
+        <tr style="vertical-align: middle; ">
+          <th scope="col">
+            Nome do Visitante
+          </th>
+          <th scope="col">
+            Documento do Visitante
+          </th>
+          <th scope="col">
+            Data da visita
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr style="vertical-align: middle;">
+          <td style="vertical-align: middle;">
+            Nome do Visitante
+          </td>
+          <td style="vertical-align: middle;">
+            Documento do Visitante
+          </td>
+          <td style="vertical-align: middle;">
+            Data da visita
+          </td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
 
-  </section>
-  <section>
+
     <div class="container">
       <h3>
         Sobre nós

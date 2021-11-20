@@ -188,13 +188,53 @@ def info():
 
 @app.route('/visitantes')
 def visitantes():
+    '''
     conn = get_db_connection()
     events = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('login', proxima=url_for('login')))
     #return render_template('agenda.html', email = session['usuario_logado'], events = events)
+    '''
     return render_template('visitantes.html')
+
+#Gravar um visitante
+@app.route('/lista-visitante', methods=('GET', 'POST'))
+def listaVisitante():
+    if request.method == 'POST':
+        title = request.form['data']
+        nome = request.form['nome']
+        doc = request.form['rg']
+        content = (nome + ": " + doc)
+
+        dataEvent={'date' : title, 'todo': content}
+
+        try:
+            db.child('visitantes').push(dataEvent)
+            flash('sucesso!')
+            return redirect(url_for('visitantes'))
+        except:
+          flash('Falha, tente novamente!')
+          return redirect(url_for('visitantes'))
+
+#Gravar um recados
+@app.route('/lista-recados', methods=('GET', 'POST'))
+def listaRecardos():
+    if request.method == 'POST':
+        title = request.form['data']
+        nome = request.form['nome']
+        doc = request.form['rg']
+        content = (nome + ": " + doc)
+
+        dataEvent={'date' : title, 'todo': content}
+
+        try:
+            db.child('recados').push(dataEvent)
+            flash('sucesso!')
+            return redirect(url_for('info'))
+        except:
+          flash('Falha, tente novamente!')
+          return redirect(url_for('info'))
 
 
 app.run(debug=True)

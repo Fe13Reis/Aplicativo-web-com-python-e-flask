@@ -44,6 +44,68 @@
 		  </table>
 		</nav>
 	  </header>
+	  <section class="caixa" style="margin-top: 80px; margin-bottom: 20px">
+		<div class="container">
+		  <h1 style="text-align: center; color: black;"> Lista de mensagens</h1><br>
+	
+		  <form method="POST" action="{{ url_for('listaRecardos') }}">
+			<div class="form-floating">
+			  <label style="margin-top: 10px; text-align: center;  font-size: 26px; color: black;" for="floatingNome">
+				Inclua mensagem do Condominio</label>
+			  <input style="width: 100%;margin-top: 20px;" type="text" class="form-control" name="nome"
+				placeholder="Mesnsagem"><br>
+				<table style="width: 100%">
+				  <tr style="vertical-align: middle;">
+					<td style="vertical-align: middle;">
+					  <input style="margin-top: 20px;" type="text" class="form-control" name="rg"
+					  placeholder="Asunto">
+					</td>
+					<td style="vertical-align: middle;">
+					  <input style="margin-top: 20px;" type="date" class="form-control" name="data"><br>
+					</td>
+				  </tr>
+				</table>
+			</div>
+	
+			</td>
+			<td style="padding-right: 10px;">
+			  <button class="btn-lg btn-primary" type="submit">Enviar</button>
+			</td>
+		</div>
+		</form>
+		</div>
+		
+		<div class="container" style="background-color: white; margin-top: 25px;">
+		  <table style="width: 100%;" class="table">
+			<thead class="thead-dark">
+			<tr style="vertical-align: middle; ">
+			  <th scope="col">
+				Mensagem
+			  </th>
+			  <th scope="col">
+				Assunto
+			  </th>
+			  <th scope="col">
+				Data
+			  </th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr style="vertical-align: middle;">
+			  <td style="vertical-align: middle;">
+				Mensagem
+			  </td>
+			  <td style="vertical-align: middle;">
+				Asunto
+			  </td>
+			  <td style="vertical-align: middle;">
+				Data
+			  </td>
+			</tr>
+		  </tbody>
+		  </table>
+		</div>
+	  </section>
 	<main>
 
 		<h2 style= "text-align: center;"> Informações sobre horários e valores</h2>
