@@ -13,7 +13,7 @@
     {% block content %}
         <h1>{% block title %} Lista de datas marcadas {% endblock %}</h1>
         {% for post in posts %}
-            <table style="width: 100%; background-color: white; " border="1px">
+            <table style="width: 100%; background-color: white;" border="1px">
                 <tr style="width: 100%;">
                     <td style="width: 75%; padding: 10px;">
                         <a href="{{ url_for('post', post_id=post['id']) }}">
