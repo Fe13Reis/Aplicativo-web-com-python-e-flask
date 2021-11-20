@@ -21,26 +21,34 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-md fixed-top navbar-transparente" style="background-color: black;">
-            <div class="container" style="color: yellow;">
-                <h6 style="text-align: center;">SGC - Sistema de Gerenciamento do Condomínio Solar de
+        <nav class="navbar navbar-expand-md fixed-top navbar-transparente" style="background-color: black; height: 45px;">
+          <table style="width:100%">
+            <tr>
+              <td style="width: 50%">
+                <div class="container" style="color: yellow;">
+                  <h6 style="text-align: center;">SGC - Sistema de Gerenciamento do Condomínio Solar de
                     Oliveira</h6>
-            </div>
+                </div>
+              </td>
+              <td style="width: 50%">
+              </td>
+            </tr>
+          </table>
         </nav>
-    </header>
+      </header>
 
     <br>
 
     <h1 style="color: white; margin-bottom: 10px; margin-top: 20px; ">Bem vindo ao Sistema de Gerenciamento</h1>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul id="messages" class="list-unstyled">
-            {% for message in messages %}
-            <li class="alert alert-success">{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul id="messages" class="list-unstyled">
+        {% for message in messages %}
+        <li class="alert alert-success">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
 
     <div class="center">
 
@@ -54,12 +62,12 @@
 
     </div>
 
-    <footer style="background-color: black;">
+    <footer style="background-color: black; position: relative; bottom: 0;">
         <table style="width:100%">
 
             <tr>
                 <td style="width:10%; text-align: center;">
-                    <p class="mt-5 mb-3" style="color: white;">Segue a gente nas redes sociais</p>
+                    <p class="mt-5 mb-3" style="color: white;">Segue a gente nas redes sociais:</p>
                 </td>
                 <td style="width:10%;; text-align: center;">
                     <a href="https://www.facebook.com/">
@@ -70,9 +78,6 @@
                     <a href="https://www.instagram.com/">
                         <img src="https://www.jerem.com.br/imagens/instagram.png" style="height: 50px; width: 50px">
                     </a>
-                </td>
-                <td style="width:10%; text-align: center;">
-                    <a href="#">Administrador</a>
                 </td>
                 <td style="width:10%; text-align: center;">
                     <p style="color: white;">&copy;2021</p>
