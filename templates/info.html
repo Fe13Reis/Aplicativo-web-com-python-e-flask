@@ -45,7 +45,7 @@
 					<li class="nav-item active ">
 						<a class="nav-link btn-lg"
 							style="margin-right: 30px; margin-top: 5px; font-size: 20px; text-align: center; background-color: #606060; color: white; width: 95%;"
-							href="#">Desconectar</a>
+							href="{{ url_for('index')}}">Desconectar</a>
 					</li>
 				</ul>
 			</div>
@@ -60,15 +60,21 @@
 				<label style="margin-top: 10px; text-align: center;  font-size: 26px; color: black;" for="floatingNome">
 					Inclua mensagem do Condominio</label>
 				<input style="width: 100%;margin-top: 20px;" type="text" class="form-control" name="nome"
-					placeholder="Mensagem"><br>
+					placeholder="Mesnsagem"><br>
 				<div style="display: block; width: 48%; float: left">
-					<input type="text" class="form-control" name="rg" placeholder="Asunto">
+					<label>
+						Informe o assunto
+						<input type="text" class="form-control" name="rg" placeholder="Assunto">
+					</label>
 				</div>
 				<div style="display: block; width: 48%; float: right">
-					<input type="date" class="form-control" name="data"><br>
+					<label>
+						Escolha a data no calendário
+						<input id="calendario" type="date" class="form-control" name="data"><br>
+					</label>
 				</div>
 				<div style="clear: both;">
-					<button class="btn-lg btn-primary" type="submit">Enviar</button>
+					<button class="btn-lg btn-primary" style= background-color:#001fff type="submit">Enviar</button>
 				</div>
 			</form>
 		</div>
@@ -118,7 +124,7 @@
 			<li>
 				<a href="/agenda">
 					<h2>Piscina coberta</h2>
-					<img alt= "imagem da piscina coberta do condomínio" src="../static/img/piscina_coberta.jpg">
+					<img src="../static/img/piscina_coberta.jpg">
 					<p class="produto-descrica">Disponível de terça a domingo das 09:00 às 22:00.</p>
 					<p class="produto-preco">Limite diário de 60 minutos por apartamento.</p>
 				</a>
@@ -126,7 +132,7 @@
 			<li>
 				<a href="/agenda">
 					<h2>Salão de Festas</h2>
-					<img alt="imagem do salão de festas do Condominio" src="../static/img/salao_de_festas.png">
+					<img src="../static/img/salao_de_festas.png">
 					<p class="produto-descricao">Salão de festas com toda a infraestrutura para sua confraternização.
 					</p>
 					<p class="produto-preco">R$200,00 por reserva.</p>
@@ -135,7 +141,7 @@
 			<li>
 				<a href="/agenda">
 					<h2>Churrasqueira</h2>
-					<img alt= "imagem da churrasqueira do condomínio" src="../static/img/churrasqueira.jpg">
+					<img src="../static/img/churrasqueira.jpg">
 					<p class="produto-descricao">Espaço com churrasqueira para até 20 pessoas.</p>
 					<p class="produto-preco">R$100,00 por reserva.</p>
 				</a>
@@ -152,13 +158,13 @@
 				</td>
 				<td style="width:10%;; text-align: center;">
 					<a href="https://www.facebook.com/" target="_blank">
-						<img alt="ícone do facebook" src="https://www.jerem.com.br/imagens/facebook.png" style="height: 50px; width: 50px">
-					link para o facebook</a>
+						<img alt="Link do facebook" src="https://www.jerem.com.br/imagens/facebook.png" style="height: 50px; width: 50px">
+					</a>
 				</td>
 				<td style="width:10%; text-align: center;">
 					<a href="https://www.instagram.com/" target="_blank">
-						<img alt="ícone do instagram" src="https://www.jerem.com.br/imagens/instagram.png" style="height: 50px; width: 50px">
-					link para o instragram</a>
+						<img alt="Link do instagram" src="https://www.jerem.com.br/imagens/instagram.png" style="height: 50px; width: 50px">
+					</a>
 				</td>
 				<td style="width:10%; text-align: center;">
 					<a href="{{ url_for('dataMarcada')}}">Administrador</a>
@@ -170,7 +176,7 @@
 			</tr>
 		</table>
 		<a href="https://api.whatsapp.com/send?l=pt&amp;phone=5511977205935" target="_blank"><img
-				src="https://www.jerem.com.br/imagens/whatsapp.png"
+			alt="Link do whatsapp" src="https://www.jerem.com.br/imagens/whatsapp.png"
 				style="height:60px; width: 60px; position:fixed; bottom: 125px; right: 25px; z-index:99999;"
 				data-selector="img"></a>
 	</footer>

@@ -38,7 +38,7 @@
             <li class="nav-item active ">
               <a class="nav-link btn-lg"
                 style="margin-right: 30px; margin-top: 5px; font-size: 20px; text-align: center; background-color: #606060; color: white; width: 95%;"
-                href="#">Desconectar</a>
+                href="{{ url_for('logout')}}">Desconectar</a>
             </li>
           </ul>
         </div>
@@ -74,17 +74,17 @@
   <footer style="background-color: black;">
     <table style="width:100%">
       <tr>
-        <td class="mt-5 mb-3" style="width:10%; text-align: center; color: white; vertical-align: center; height: 80px;">
+        <td style="width:10%; text-align: center; color: white; vertical-align: center; height: 80px;">
           Segue a gente nas redes sociais:
         </td>
         <td style="width:10%;; text-align: center;">
           <a href="https://www.facebook.com/" target="_blank">
-            <img src="https://www.jerem.com.br/imagens/facebook.png" style="height: 50px; width: 50px">
+            <img alt="Link do Facebook" src="https://www.jerem.com.br/imagens/facebook.png" style="height: 50px; width: 50px">
           </a>
         </td>
         <td style="width:10%; text-align: center;">
           <a href="https://www.instagram.com/" target="_blank">
-            <img src="https://www.jerem.com.br/imagens/instagram.png" style="height: 50px; width: 50px">
+            <img alt="Link do instagram" src="https://www.jerem.com.br/imagens/instagram.png" style="height: 50px; width: 50px">
           </a>
         </td>
         <td style="width:10%; text-align: center;">
@@ -96,7 +96,7 @@
       </tr>
     </table>
     <a href="https://api.whatsapp.com/send?l=pt&amp;phone=5511977205935" target="_blank"><img
-        src="https://www.jerem.com.br/imagens/whatsapp.png"
+      alt="Link do whatsapp" src="https://www.jerem.com.br/imagens/whatsapp.png"
         style="height:60px; width: 60px; position:fixed; bottom: 125px; right: 25px; z-index:99999;"
         data-selector="img"></a>
   </footer>     
