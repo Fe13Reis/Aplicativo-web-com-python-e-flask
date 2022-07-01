@@ -46,7 +46,7 @@
           <li class="nav-item active ">
             <a class="nav-link btn-lg"
               style="margin-right: 30px; margin-top: 5px; font-size: 20px; text-align: center; background-color: #606060; color: white; width: 95%;"
-              href="#">Desconectar</a>
+              href="{{ url_for('logout')}}">Desconectar</a>
           </li>
         </ul>
       </div>
@@ -64,13 +64,19 @@
         <input style="width: 100%; margin-top: 20px;" type="text" class="form-control" name="nome"
           placeholder="Nome Completo"><br>
         <div style="display: block; width: 48%; float: left">
-          <input type="text" class="form-control" name="rg" placeholder="Documento">
+          <label>
+            Informe o documento do visitante
+            <input type="text" class="form-control" name="rg" placeholder="Documento">
+          </label>
         </div>
         <div style="display: block; width: 48%; float: right">
-          <input type="date" class="form-control" name="data"><br>
+          <label>
+            Escolha a data no calendário
+            <input type="date" class="form-control" name="data"><br>
+          </label>  
         </div>
         <div style="clear: both;">
-          <button class="btn-lg btn-primary" type="submit">Enviar</button>
+          <button class="btn-lg btn-primary" style= background-color:#001fff type="submit">Enviar</button>
         </div>
       </form>
     </div>
@@ -116,9 +122,9 @@
 
 
     <div class="container">
-      <h3>
+      <h2>
         Sobre nós
-      </h3>
+      </h2>
       <p>
         O Condominio Residencial Solar de Oliveira possui espaços de lazer pensados para oferecer diversão completa para
         toda a família, sem sair de casa. Um projeto completo, equipado e decorado com muitos detalhes de acabamento,
@@ -139,12 +145,12 @@
         </td>
         <td style="width:10%;; text-align: center;">
           <a href="https://www.facebook.com/" target="_blank">
-            <img src="https://www.jerem.com.br/imagens/facebook.png" style="height: 50px; width: 50px">
+            <img alt="link para o facebook" src="https://www.jerem.com.br/imagens/facebook.png" style="height: 50px; width: 50px">
           </a>
         </td>
         <td style="width:10%; text-align: center;">
           <a href="https://www.instagram.com/" target="_blank">
-            <img src="https://www.jerem.com.br/imagens/instagram.png" style="height: 50px; width: 50px">
+            <img alt="link para o instagram" src="https://www.jerem.com.br/imagens/instagram.png" style="height: 50px; width: 50px">
           </a>
         </td>
         <td style="width:10%; text-align: center;">
@@ -156,7 +162,7 @@
         </td>
       </tr>
     </table>
-    <a href="https://api.whatsapp.com/send?l=pt&amp;phone=5511977205935" target="_blank"><img
+    <a href="https://api.whatsapp.com/send?l=pt&amp;phone=5511977205935" target="_blank"><img alt="link para o whatsapp"
         src="https://www.jerem.com.br/imagens/whatsapp.png"
         style="height:60px; width: 60px; position:fixed; bottom: 125px; right: 25px; z-index:99999;"
         data-selector="img"></a>

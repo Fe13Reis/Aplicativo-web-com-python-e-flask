@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+<!-- html2canvas library -->
+<script src="js/html2canvas.min.js"></script>
+
+<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<!-- jsPDF library -->
+<script src="js/jsPDF/dist/jspdf.min.js"></script>
+<!--<script type="text/javascript" src="boletopdf.js"></script>-->
+<script>
+  function Convert_HTML_To_PDF() {
+  var elementHTML = document.getElementById('contentToPrint');
+
+  html2canvas(elementHTML, {
+    useCORS: true,
+    onrendered: function(canvas) {
+      var pdf = new jsPDF('p', 'pt', 'letter');
+
+      var pageHeight = 980;
+      var pageWidth = 900;
+      for (var i = 0; i <= elementHTML.clientHeight / pageHeight; i++) {
+        var srcImg = canvas;
+        var sX = 0;
+        var sY = pageHeight * i; // start 1 pageHeight down for every new page
+        var sWidth = pageWidth;
+        var sHeight = pageHeight;
+        var dX = 0;
+        var dY = 0;
+        var dWidth = pageWidth;
+        var dHeight = pageHeight;
+
+        window.onePageCanvas = document.createElement("canvas");
+        onePageCanvas.setAttribute('width', pageWidth);
+        onePageCanvas.setAttribute('height', pageHeight);
+        var ctx = onePageCanvas.getContext('2d');
+        ctx.drawImage(srcImg, sX, sY, sWidth, sHeight, dX, dY, dWidth, dHeight);
+
+        var canvasDataURL = onePageCanvas.toDataURL("image/png", 1.0);
+        var width = onePageCanvas.width;
+        var height = onePageCanvas.clientHeight;
+
+        if (i > 0) // if we're on anything other than the first page, add another page
+          pdf.addPage(612, 864); // 8.5" x 12" in pts (inches*72)
+
+        pdf.setPage(i + 1); // now we declare that we're working on that page
+        pdf.addImage(canvasDataURL, 'PNG', 20, 40, (width * .62), (height * .62)); // add content to the page
+      }
+            
+      // Save the PDF
+      pdf.save('segunda_via_boleto.pdf');
+    }
+  });
+}
+
+function CopiarCodigo(){
+  alert("Código barra cópiado!")
+}
+</script>
+
+</head>
+<body style="display: flex;
+  justify-content: center;
+  align-items: center;">
+
+  <div style="background-image: linear-gradient(to right, green , yellow); width: 66%; padding: 10px;">
+      <!-- Trigger button -->
+      <table style="border: 1px solid; width: 100%;">
+        <tr style="text-align: center;">
+          <td style="width: 50%; align-items: center;">
+            <button type="button" class="btn btn-info" onclick="Convert_HTML_To_PDF();">Baixar como PDF</button>
+          </td>
+          <td style="width: 50%; align-items: center;">
+            <button type="button" class="btn btn-secondary" onclick="CopiarCodigo();">Cópie Código Barra</button>
+          </td>
+        </tr>
+      </table>
+
+      <!-- HTML content for PDF creation -->
+      <div id="contentToPrint">
+          <div style="height: 40px; padding-bottom: 15px; background: green;">
+            <h1 style="margin-left: 300px; color: yellow;">2ª via de Boleto</h1>
+          </div>
+          <div>
+            <table style = "border: 2px solid; height: 50px;" >
+            <tr>
+              <td style="border: 1px solid; background: green; width: 15%">
+                <h1>PORTAL SGCS</h1>
+              </td>
+              <td style="border: 1px solid; width: 26%; padding-left: 5px;">
+                <h3>Nome completo</h3>
+                <h4>email@email.com</h4>
+                <p>Apto: 105</p>
+              </td>
+              <td td style="border: 1px solid; width: 15%">
+                <h2>R$ 550,00</h2>
+                <p>Vencimento:</p>
+                <p>10/06/2022</p>
+              </td>
+            </tr>
+          </table>
+          </div>
+
+          <div style="border: 1px solid; margin: 15px; background: white;">
+            <table style = "height: 550px;" >
+              <tr>
+                <td style="solid; width: 43%">
+                  <p style="margin: 15px;"><b>Detalhes</b></p>
+                  </td>
+                </td>
+                <td style="width: 13%">
+                  <p style="margin: 15px;"><b>Valor</b></p>
+                </td>
+              <tr>
+                <td style="width: 43%">
+                  <p style="margin: 15px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </td>
+                </td>
+                <td style="width: 13%">
+                  <p>R$ 100,00</p>    
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 43%">
+                  <p style="margin: 15px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </td>
+                </td>
+                <td style="width: 13%">
+                  <p>R$ 100,00</p>
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 43%">
+                  <p style="margin: 15px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </td>
+                </td>
+                <td style="width: 13%">
+                  <p>R$ 100,00</p>
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 43%">
+                  <p style="margin: 15px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </td>
+                </td>
+                <td style="width: 13%">
+                  <p>R$ 100,00</p>
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 43%">
+                  <p style="margin: 15px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </td>
+                </td>
+                <td style="width: 13%">
+                  <p>R$ 50,00</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div style="position: fixed bottom;">
+            <table style = "border: 2px solid; height: 50px;" >
+            <tr>
+              <td style="border: 1px solid; background: green; width: 15%">
+                <h1>PORTAL SGCS</h1>
+              </td>
+              <td style="border: 1px solid; width: 26%; padding-left: 5px;">
+                <h3>Nome completo</h3>
+                <h4>email@email.com</h4>
+                <p>Apto: 105</p>
+              </td>
+              <td td style="border: 1px solid; width: 15%">
+                <h2>R$ 550,00</h2>
+                <p>Vencimento:</p>
+                <p>10/06/2022</p>
+              </td>
+            </tr>
+          </table>
+          </div>
+          <div style="text-align: center;">
+            <h4>CÓDIGO BARRA: 123 45678 12 546128 12 156 156648 12</h4>
+          </div>
+      </div>
+  </div>
+</body>
+</html>

@@ -64,24 +64,28 @@
 
                           <div class="carousel-inner"><!--Inner -->
                             
-                            <div class="carousel-item active ml-3">
-                              <img alt= "imagem do espaÃ§o com churrasqueira do condomÃ­nio" src="../static/img/churrasqueira.jpg" class="img-fluid" style="width: 500px; height: 320px;">
-                              <div class="carousel-caption bg-info">Churrasqueira</div>
+                            <div class="carousel-item active ml-3" > 
+                              <img alt= "imagem do espaço com churrasqueira do condomínio" src="../static/img/churrasqueira.jpg" class="img-fluid" style="width: 500px; height: 320px;">
+                              <div style= "background-color:#001fff; position: absolute; right: 15%; bottom: 20px;
+                              left: 15%; z-index: 10; padding-top: 20px; padding-bottom: 20px; color: #fff; text-align: center;">  Churrasqueira</div>
                             </div>
 
                             <div class="carousel-item ml-3">
-                              <img alt= "imagem da piscina cobrta do condomÃ­nio" src="../static/img/piscina_coberta.jpg" class="img-fluid" style="width: 500px; height: 320px;">
-                              <div class="carousel-caption bg-info">Piscina Coberta</div>
+                              <img alt= "imagem da piscina cobrta do condomínio" src="../static/img/piscina_coberta.jpg" class="img-fluid" style="width: 500px; height: 320px;">
+                              <div style= "background-color:#001fff; position: absolute; right: 15%; bottom: 20px;
+                              left: 15%; z-index: 10; padding-top: 20px; padding-bottom: 20px; color: #fff; text-align: center;"> Piscina Coberta</div>
                             </div>
 
                             <div class="carousel-item ml-3">
-                              <img alt= "imagem da fachada do prÃ©dio" src="../static/img/predio.jpg" class="img-fluid" style="width: 500px; height: 320px;">
-                              <div class="carousel-caption bg-info">O Predio</div>
+                              <img alt= "imagem da fachada do prédio" src="../static/img/predio.jpg" class="img-fluid" style="width: 500px; height: 320px;">
+                              <div style= "background-color:#001fff; position: absolute; right: 15%; bottom: 20px;
+                              left: 15%; z-index: 10; padding-top: 20px; padding-bottom: 20px; color: #fff; text-align: center;"> O Predio </div>
                             </div>
 
                             <div class="carousel-item ml-3">
-                              <img alt="imagem do salÃ£o de festas do Condominio" src="../static/img/salao_de_festas.png" class="img-fluid" style="width: 500px; height: 320px;">
-                              <div class="carousel-caption bg-info">SalÃ£o de festa</div>
+                              <img alt="imagem do salão de festas do Condominio" src="../static/img/salao_de_festas.png" class="img-fluid" style="width: 500px; height: 320px;">
+                              <div style= "background-color:#001fff; position: absolute; right: 15%; bottom: 20px;
+                              left: 15%; z-index: 10; padding-top: 20px; padding-bottom: 20px; color: #fff; text-align: center;"> Salão de festas</div>
                             </div>
 
                                                       
@@ -89,12 +93,12 @@
 
                           <!-- Controles -->
                           <a href="#carousel-legenda" class="carousel-control-prev" data-slide="prev">
-                            <span arial-label="Próxima imagem da direita" class="carousel-control-prev-icon"></span>
-                          </a>
+                            <span  class="carousel-control-prev-icon"></span> 
+                            Próximo</a>
 
-                          <a href="#carousel-legenda" class="carousel-control-next" data-slide="next">
-                            <span arial-label="Próxima imagem da direita" class="carousel-control-next-icon"></span> 
-                          </a>
+                          Próximo<a href="#carousel-legenda" class="carousel-control-next" data-slide="next">
+                            <span  class="carousel-control-next-icon"></span> 
+                            Próximo</a>
 
                       </div><!--/Carousel -->
                     </div>
@@ -112,7 +116,7 @@
                                 {% endif %}
                             {% endwith %}
                         
-                        <h1 class="h3 mb-3 fw-normal">Acesse para agendar</h1>
+                        <h1 class="h1 mb-3 fw-normal">Acesse para agendar</h1>
 
                         <div class="form-floating mb-3">
                           <input type="hidden" name="proxima" value="{{ proxima or url_for('index') }}">
@@ -130,10 +134,10 @@
                             <input type="checkbox" value="remember-me"> Remember me
                           </label>
                           <label style="margin-left: 100px">
-                            <a href=""><u>Esqueci a minha senha!</u></a>
+                            <a style= color:#212529 href=""><u>Esqueci a minha senha!</u></a>
                           </label>
                         </div>
-                        <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+                        <button class="w-100 btn btn-lg btn-primary" style= background-color:#001fff type="submit">Entrar</button>
                     </form>
                 </div>
             </div>
@@ -141,17 +145,17 @@
     </section>
     <section>
         <div class="container">
-            <h3>
-                Sobre nÃ³s
-            </h3>
+            <h2>
+                Sobre nós
+            </h2>
             <p>
-              O Condominio Residencial Solar de Oliveira possui espaÃ§os de lazer pensados para oferecer diversÃ£o completa para
-              toda a famÃ­lia, sem sair de casa. Um projeto completo, equipado e decorado com muitos detalhes de acabamento,
-              tudo em um amplo terreno de 5.208 mÂ².
+              O Condominio Residencial Solar de Oliveira possui espaços de lazer pensados para oferecer diversão completa para
+              toda a família, sem sair de casa. Um projeto completo, equipado e decorado com muitos detalhes de acabamento,
+              tudo em um amplo terreno de 5.208 m².
             </p>
             <p>
-              Pensando na sua comodidade, nesse espaÃ§o vocÃª poderÃ¡ agendar a data e horÃ¡rio para utilizaÃ§Ã£o da Piscina
-              Coberta, Churrasqueira e SalÃ£o de Festas. 
+              Pensando na sua comodidade, nesse espaço você poderá agendar a data e horário para utilização da Piscina
+              Coberta, Churrasqueira e Salão de Festas. 
         </div>
     </section>
     <footer style="background-color: black;">
